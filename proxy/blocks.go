@@ -9,8 +9,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/etclabscore/open-etc-pool/rpc"
-	"github.com/etclabscore/open-etc-pool/util"
+	"github.com/p0nch00/open-etc-pool/rpc"
+	"github.com/p0nch00/open-etc-pool/util"
 )
 
 const maxBacklog = 3

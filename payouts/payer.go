@@ -7,14 +7,14 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
-	"time"
 	"sync"
+	"time"
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 
-	"github.com/etclabscore/open-etc-pool/rpc"
-	"github.com/etclabscore/open-etc-pool/storage"
-	"github.com/etclabscore/open-etc-pool/util"
+	"github.com/p0nch00/open-etc-pool/rpc"
+	"github.com/p0nch00/open-etc-pool/storage"
+	"github.com/p0nch00/open-etc-pool/util"
 )
 
 const txCheckInterval = 5 * time.Second
@@ -30,9 +30,9 @@ type PayoutsConfig struct {
 	GasPrice     string `json:"gasPrice"`
 	AutoGas      bool   `json:"autoGas"`
 	// In Shannon
-	Threshold    int64  `json:"threshold"`
-	BgSave       bool   `json:"bgsave"`
-	ConcurrentTx int    `json:"concurrentTx"`
+	Threshold    int64 `json:"threshold"`
+	BgSave       bool  `json:"bgsave"`
+	ConcurrentTx int   `json:"concurrentTx"`
 }
 
 func (self PayoutsConfig) GasHex() string {

@@ -1,13 +1,13 @@
 package proxy
 
 import (
+	"errors"
 	"log"
 	"regexp"
 	"strings"
-	"errors"
 
-	"github.com/etclabscore/open-etc-pool/rpc"
-	"github.com/etclabscore/open-etc-pool/util"
+	"github.com/p0nch00/open-etc-pool/rpc"
+	"github.com/p0nch00/open-etc-pool/util"
 )
 
 // Allow only lowercase hexadecimal with 0x prefix
@@ -25,10 +25,10 @@ func (s *ProxyServer) handleLoginRPC(cs *Session, params []string, id string) (b
 	login := strings.ToLower(params[0])
 	if strings.Contains(login, ".") {
 		longString := strings.Split(login, ".")
-                loginCheck = longString[0]
-    } else {
-        loginCheck = login
-    }
+		loginCheck = longString[0]
+	} else {
+		loginCheck = login
+	}
 
 	if !util.IsValidHexAddress(loginCheck) {
 		return false, &ErrorReply{Code: -1, Message: "Invalid login"}
@@ -67,9 +67,9 @@ func (s *ProxyServer) handleSubmitRPC(cs *Session, login, id string, params []st
 		longString := strings.Split(login, ".")
 		id = longString[1]
 		login = longString[0]
-    }
-	
-	if !workerPattern.MatchString(id){
+	}
+
+	if !workerPattern.MatchString(id) {
 		id = "default"
 	}
 	if len(params) != 3 {
@@ -96,7 +96,6 @@ func (s *ProxyServer) handleSubmitRPC(cs *Session, login, id string, params []st
 		//	When this function finishes, the results is already recorded in the db for valid shares or blocks.
 		exist, validShare := s.processShare(login, id, cs.ip, t, params)
 		ok := s.policy.ApplySharePolicy(cs.ip, !exist && validShare)
-
 
 		// if true,true or true,false
 		if exist {

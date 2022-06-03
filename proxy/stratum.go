@@ -10,7 +10,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/etclabscore/open-etc-pool/util"
+	"github.com/p0nch00/open-etc-pool/util"
 )
 
 const (

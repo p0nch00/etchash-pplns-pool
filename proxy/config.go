@@ -1,10 +1,10 @@
 package proxy
 
 import (
-	"github.com/etclabscore/open-etc-pool/api"
-	"github.com/etclabscore/open-etc-pool/payouts"
-	"github.com/etclabscore/open-etc-pool/policy"
-	"github.com/etclabscore/open-etc-pool/storage"
+	"github.com/p0nch00/open-etc-pool/api"
+	"github.com/p0nch00/open-etc-pool/payouts"
+	"github.com/p0nch00/open-etc-pool/policy"
+	"github.com/p0nch00/open-etc-pool/storage"
 )
 
 type Config struct {

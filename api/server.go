@@ -14,8 +14,8 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/robfig/cron"
 
-	"github.com/etclabscore/open-etc-pool/storage"
-	"github.com/etclabscore/open-etc-pool/util"
+	"github.com/p0nch00/open-etc-pool/storage"
+	"github.com/p0nch00/open-etc-pool/util"
 )
 
 type ApiConfig struct {

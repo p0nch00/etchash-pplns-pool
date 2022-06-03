@@ -8,9 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"gopkg.in/redis.v3"
-
-	"github.com/etclabscore/open-etc-pool/util"
+	"github.com/p0nch00/open-etc-pool/util"
 )
 
 type Config struct {
